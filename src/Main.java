@@ -213,10 +213,10 @@ public class Main {
         String leftBlock = "| ";
         String rightBlock = "|";
 
-        // Верхняя/нижняя граница строится под ширину поля.
+        // Верхняя/нижняя граница строится под ширину поля (с длинным тире).
         StringBuilder wall = new StringBuilder("+");
         for (int i = 0; i < board.length; i++) {
-            wall.append("----+");
+            wall.append(" — +");
         }
 
         for (String[] row : board) {
