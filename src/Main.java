@@ -25,6 +25,9 @@ public class Main {
     static int step = 0;
 
     public static void main(String[] args) {
+        // Принудительно выводим в UTF-8, чтобы русский не ломался в консоли.
+        System.setOut(new java.io.PrintStream(System.out, true, java.nio.charset.StandardCharsets.UTF_8));
+
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
