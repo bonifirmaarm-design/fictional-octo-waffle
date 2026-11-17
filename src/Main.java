@@ -16,7 +16,6 @@ import java.util.Scanner;
 public class Main {
 
     // Символ пустой клетки.
-    static final String EMPTY = "  ";
 
     // Замок — цель игрока.
     static String castle = "\uD83C\uDFF0"; // замок
@@ -51,7 +50,7 @@ public class Main {
         String[][] board = new String[sizeBoard][sizeBoard];
         for (int i = 0; i < sizeBoard; i++) {
             for (int j = 0; j < sizeBoard; j++) {
-                board[i][j] = EMPTY;
+                board[i][j] = "  ";
             }
         }
 
@@ -86,7 +85,7 @@ public class Main {
             int column = monster.getX() - 1;
 
             // Ставим монстра только на пустую клетку (не на героя и не на замок).
-            if (board[row][column].equals(EMPTY)) {
+            if (board[row][column].equals("  ")) {
                 board[row][column] = monster.getImage();
                 monsters[count] = monster;
                 count++;
@@ -103,7 +102,7 @@ public class Main {
             MedKit kit = new MedKit(sizeBoard);
             int row = kit.getY() - 1;
             int column = kit.getX() - 1;
-            if (board[row][column].equals(EMPTY)) {
+            if (board[row][column].equals("  ")) {
                 board[row][column] = kit.getImage();
                 medKits[countKit] = kit;
                 countKit++;
@@ -135,9 +134,9 @@ public class Main {
             if (person.isMoveCorrect(x, y)) {
                 String next = board[y - 1][x - 1];
 
-                if (next.equals(EMPTY)) {
+                if (next.equals("  ")) {
                     // Клетка пустая — просто переходим.
-                    board[person.getY() - 1][person.getX() - 1] = EMPTY;
+                    board[person.getY() - 1][person.getX() - 1] = "  ";
                     person.move(x, y);
                     board[person.getY() - 1][person.getX() - 1] = person.getImage();
                     step++;
@@ -160,7 +159,7 @@ public class Main {
                             person.upLive();
                             System.out.println("Вы подобрали аптечку! +1 жизнь (теперь жизней: "
                                     + person.getLive() + ")");
-                            board[person.getY() - 1][person.getX() - 1] = EMPTY;
+                            board[person.getY() - 1][person.getX() - 1] = "  ";
                             person.move(x, y);
                             board[person.getY() - 1][person.getX() - 1] = person.getImage();
                             step++;
@@ -177,7 +176,7 @@ public class Main {
                                 // который реально стоит на клетке (обычного или большого).
                                 if (monster.taskMonster(difficultGame)) {
                                     // Победили монстра — проходим на его клетку.
-                                    board[person.getY() - 1][person.getX() - 1] = EMPTY;
+                                    board[person.getY() - 1][person.getX() - 1] = "  ";
                                     person.move(x, y);
                                     board[person.getY() - 1][person.getX() - 1] = person.getImage();
                                     step++;
