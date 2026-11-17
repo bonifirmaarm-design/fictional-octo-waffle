@@ -8,7 +8,7 @@ import java.util.Random;
 public class MedKit {
     private int x;
     private int y;
-    private String image = "❤"; // ❤ (аптечка/сердечко)
+    private String image = "+"; // аптечка (аптечка/сердечко)
     private boolean active = true;   // аптечку можно использовать только один раз
 
     /**

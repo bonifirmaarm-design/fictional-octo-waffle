@@ -15,11 +15,11 @@ import java.util.Scanner;
  */
 public class Main {
 
-    // Символ пустой клетки. Два пробела — чтобы колонки ровно вставали под эмодзи.
-    static final String EMPTY = "  ";
+    // Символ пустой клетки.
+    static final String EMPTY = ".";
 
     // Замок — цель игрока.
-    static String castle = "🏰"; // 🏰
+    static String castle = "Z"; // Z - замок (zamok)
 
     // Счётчик ходов.
     static int step = 0;
@@ -30,7 +30,7 @@ public class Main {
 
         // ---------- Обработка начала игры ----------
         System.out.println("=== Добро пожаловать в игру \"Путь к замку\"! ===");
-        System.out.println("Цель: дойти до замка " + castle + ", побеждая монстров и собирая аптечки " + "❤");
+        System.out.println("Цель: дойти до замка (" + castle + "), побеждая монстров (m, M) и собирая аптечки (+)");
 
         System.out.print("Введите размер игрового поля (например 5): ");
         int sizeBoard = scanner.nextInt();
@@ -143,7 +143,7 @@ public class Main {
 
                 } else if (next.equals(castle)) {
                     // Дошли до замка — победа.
-                    System.out.println("Вы прошли игру! 🏆 Победа за " + (step + 1) + " ходов!");
+                    System.out.println("Вы прошли игру! ПОБЕДА за " + (step + 1) + " ходов!");
                     break;
 
                 } else {
@@ -155,7 +155,7 @@ public class Main {
                         if (kit != null && kit.conflictPerson(x, y)) {
                             kit.use();
                             person.upLive();
-                            System.out.println("Вы подобрали аптечку! +1 жизнь ❤ (теперь жизней: "
+                            System.out.println("Вы подобрали аптечку! +1 жизнь (теперь жизней: "
                                     + person.getLive() + ")");
                             board[person.getY() - 1][person.getX() - 1] = EMPTY;
                             person.move(x, y);
@@ -198,7 +198,7 @@ public class Main {
 
         // ---------- Обработка завершения игры при исчерпании жизней ----------
         if (person.getLive() <= 0) {
-            System.out.println("Game over! 💀 У вас закончились жизни.");
+            System.out.println("Game over! У вас закончились жизни.");
         }
     }
 
