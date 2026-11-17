@@ -14,7 +14,7 @@ public class BigMonster extends Monster {
      */
     public BigMonster(int sizeBoard) {
         super(sizeBoard);
-        setImage("M"); // большой монстр
+        setImage("\uD83D\uDC79"); // большой монстр
     }
 
     /**
