@@ -16,10 +16,10 @@ import java.util.Scanner;
 public class Main {
 
     // Символ пустой клетки.
-    static final String EMPTY = "  ";
+    static final String EMPTY = ".";
 
     // Замок — цель игрока.
-    static String castle = "\uD83C\uDFF0"; // замок
+    static String castle = "Z"; // замок
 
     // Счётчик ходов.
     static int step = 0;
@@ -210,24 +210,24 @@ public class Main {
      * Тема: метод, вынесенный из основной программы (Встреча 5), циклы по массиву.
      */
     static void outputBoard(String[][] board, int live) {
-        String leftBlock = "| ";
-        String rightBlock = "|";
-
-        // Верхняя/нижняя граница строится под ширину поля (с длинным тире).
-        StringBuilder wall = new StringBuilder("+");
+        // Граница с длинным тире: + — + — + —  (ровно совпадает с клетками)
+        StringBuilder wall = new StringBuilder();
         for (int i = 0; i < board.length; i++) {
-            wall.append(" — +");
+            wall.append("+ — ");
         }
+        wall.append("+");
 
         for (String[] row : board) {
             System.out.println(wall);
+            StringBuilder line = new StringBuilder();
             for (String col : row) {
-                System.out.print(leftBlock + col + " ");
+                line.append("| ").append(col).append(" ");
             }
-            System.out.println(rightBlock);
+            line.append("|");
+            System.out.println(line);
         }
         System.out.println(wall);
 
-        System.out.println("Количество жизней:\t" + live + "\n");
+        System.out.println("Количество жизней: " + live + "\n");
     }
 }

@@ -10,7 +10,7 @@ public class Monster {
     // protected — чтобы классы-наследники (BigMonster) имели доступ к полям.
     protected int x;
     protected int y;
-    protected String image = "\uD83D\uDC7E"; // монстр
+    protected String image = "m"; // монстр
 
     /**
      * Конструктор. Монстр появляется в случайной клетке поля.

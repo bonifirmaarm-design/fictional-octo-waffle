@@ -8,7 +8,7 @@ public class Person {
     // Поля класса скрыты (инкапсуляция). Доступ — через геттеры и специальные методы.
     private int x;              // координата по горизонтали
     private int y;              // координата по вертикали
-    private String image = "\uD83E\uDDD9"; // герой
+    private String image = "G"; // герой
     private int live = 3;       // количество жизней
 
     /**
