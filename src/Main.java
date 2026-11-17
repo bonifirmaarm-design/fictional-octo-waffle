@@ -215,7 +215,7 @@ public class Main {
         // Граница с длинным тире: + — + — + —  (ровно совпадает с клетками)
         StringBuilder wall = new StringBuilder();
         for (int i = 0; i < board.length; i++) {
-            wall.append("+ — ");
+            wall.append("+ —— ");
         }
         wall.append("+");
 
