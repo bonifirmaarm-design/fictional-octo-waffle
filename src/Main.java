@@ -34,10 +34,13 @@ public class Main {
         System.out.println("=== Добро пожаловать в игру \"Путь к замку\"! ===");
         System.out.println("Цель: дойти до замка (" + castle + "), побеждая монстров (m, M) и собирая аптечки (+)");
 
-        System.out.print("Введите размер игрового поля (например 5): ");
-        int sizeBoard = scanner.nextInt();
-        if (sizeBoard < 2) {
-            sizeBoard = 2; // поле меньше 2 бессмысленно
+        int sizeBoard = 5; // поле всегда 5x5
+
+        System.out.print("Готов ли ты начать игру? (да/нет): ");
+        String ready = scanner.next();
+        if (!ready.equalsIgnoreCase("да")) {
+            System.out.println("Игра отменена. До встречи!");
+            return;
         }
 
         // ---------- Выбор уровня сложности ----------
