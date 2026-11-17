@@ -16,10 +16,10 @@ import java.util.Scanner;
 public class Main {
 
     // Символ пустой клетки.
-    static final String EMPTY = ".";
+    static final String EMPTY = "  ";
 
     // Замок — цель игрока.
-    static String castle = "Z"; // Z - замок (zamok)
+    static String castle = "\uD83C\uDFF0"; // замок
 
     // Счётчик ходов.
     static int step = 0;
